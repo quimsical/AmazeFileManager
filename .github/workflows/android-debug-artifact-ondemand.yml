@@ -17,7 +17,7 @@ jobs:
         with:
           route: ${{ github.event.issue.pull_request.url }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ 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 }}
       - name: Get PR informations
         id: pr_data
         run: |
@@ -27,7 +27,7 @@ jobs:
       - name: Checkout PR Branch
         uses: actions/checkout@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ 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 }}
           repository: ${{fromJson(steps.request.outputs.data).head.repo.full_name}}
           ref: ${{fromJson(steps.request.outputs.data).head.ref}}
       - name: Set up JDK 11
